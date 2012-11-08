@@ -1,7 +1,7 @@
 using System;
 using System.Web.Mvc;
 
-namespace BillManager.Web.Controllers
+namespace BrewEverywhere.Controllers
 {
     public class JasmineController : Controller
     {
