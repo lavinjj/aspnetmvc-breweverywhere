@@ -421,6 +421,12 @@
   <ItemGroup>
     <None Include="Scripts\jasmine\MIT.LICENSE" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BrewEverwhere.Models\BrewEverwhere.Models.csproj">
+      <Project>{2BAE17AD-1EB5-42A8-8684-6081DBD91208}</Project>
+      <Name>BrewEverwhere.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
