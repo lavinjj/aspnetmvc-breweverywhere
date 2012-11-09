@@ -10,7 +10,7 @@ namespace BrewEverywhere.Models
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
-        public int Version { get; set; }
+        public byte[] Version { get; set; }
         public double Amount { get; set; } // in liter
         public double Calcium { get; set; }
         public double Bicarbonate { get; set; }
@@ -24,11 +24,13 @@ namespace BrewEverywhere.Models
 
     public class InventoryWaterProfile : WaterProfile
     {
-        public Guid BrewerId { get; set; }
+        public BrewerInventory BrewerInventory { get; set; }
+        public Guid BrewerInventoryId { get; set; }
     }
 
     public class RecipeWaterProfile : WaterProfile
     {
+        public Recipe Recipe { get; set; }
         public Guid RecipeId { get; set; }
     }
 }

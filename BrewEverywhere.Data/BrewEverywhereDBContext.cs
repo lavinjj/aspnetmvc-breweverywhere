@@ -27,7 +27,31 @@ namespace BrewEverywhere.Data
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.Configurations.Add(new BrewerConfiguration());
+            modelBuilder.Configurations.Add(new AdjunctConfiguration());
+            modelBuilder.Configurations.Add(new InventoryAdjunctConfiguration());
+            modelBuilder.Configurations.Add(new RecipeAdjunctConfiguration());
+            modelBuilder.Configurations.Add(new BrewerInventoryConfiguration());
+            modelBuilder.Configurations.Add(new EquipmentConfiguration());
+            modelBuilder.Configurations.Add(new InventoryEquipmentConfiguration());
+            modelBuilder.Configurations.Add(new RecipeEquipmentConfiguration());
+            modelBuilder.Configurations.Add(new FermentableConfiguration());
+            modelBuilder.Configurations.Add(new InventoryFermentableConfiguration());
+            modelBuilder.Configurations.Add(new RecipeFermentableConfiguration());
+            modelBuilder.Configurations.Add(new HopConfiguration());
+            modelBuilder.Configurations.Add(new InventoryHopConfiguration());
+            modelBuilder.Configurations.Add(new RecipeHopConfiguration());
+            modelBuilder.Configurations.Add(new MashProfileConfiguration());
+            modelBuilder.Configurations.Add(new RecipeMashProfileConfiguration());
+            modelBuilder.Configurations.Add(new MashStepConfiguration());
+            modelBuilder.Configurations.Add(new RecipeConfiguration());
+            modelBuilder.Configurations.Add(new StyleConfiguration());
+            modelBuilder.Configurations.Add(new WaterProfileConfiguration());
+            modelBuilder.Configurations.Add(new InventoryWaterProfileConfiguration());
+            modelBuilder.Configurations.Add(new RecipeWaterProfileConfiguration());
+            modelBuilder.Configurations.Add(new YeastConfiguration());
+            modelBuilder.Configurations.Add(new InventoryYeastConfiguration());
+            modelBuilder.Configurations.Add(new RecipeYeastConfiguration());
         }
     }
 }

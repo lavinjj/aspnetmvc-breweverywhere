@@ -20,5 +20,6 @@ namespace BrewEverywhere.Models
         public List<Recipe> Recipies { get; set; }
         public BrewerInventory Inventory { get; set; }
         public Guid InventoryId { get; set; }
+        public byte[] Version { get; set; }
     }
 }

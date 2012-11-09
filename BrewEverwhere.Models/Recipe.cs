@@ -12,13 +12,13 @@ namespace BrewEverywhere.Models
     public class Recipe
     {
         public Guid Id { get; set; }
-        [ForeignKey("BrewerId")]
         public Brewer Brewer { get; set; }
         public Guid BrewerId { get; set; }
         public string Name { get; set; }
-        public int Version { get; set; }
+        public byte[] Version { get; set; }
         public string Type { get; set; } // can only be "Extract", "Partial Mash" or "All Grain"
-        public List<Style> Styles { get; set; }
+        public Style Style { get; set; }
+        public Guid StyleId { get; set; }
         public List<RecipeEquipment> Equipment { get; set; }
         public string BrewerName { get; set; }
         public string AssistantBrewerName { get; set; }
@@ -30,8 +30,10 @@ namespace BrewEverywhere.Models
         public List<RecipeFermentable> Fermentables { get; set; }
         public List<RecipeAdjunct> Adjuncts { get; set; }
         public List<RecipeYeast> Yeast { get; set; }
-        public List<RecipeWaterProfile> Water { get; set; }
-        public List<RecipeMashProfile> MashProfile { get; set; }
+        public RecipeWaterProfile WaterProfile { get; set; }
+        public Guid WaterProfileId { get; set; }
+        public RecipeMashProfile MashProfile { get; set; }
+        public Guid MashProfileId { get; set; }
         public string Notes { get; set; }
         public string TasteNotes { get; set; }
         public double TasteRating { get; set; } // 0-50.0

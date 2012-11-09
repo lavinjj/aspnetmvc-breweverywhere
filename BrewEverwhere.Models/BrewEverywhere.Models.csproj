@@ -51,7 +51,7 @@
     <Compile Include="Equipment.cs" />
     <Compile Include="Fermentable.cs" />
     <Compile Include="Hop.cs" />
-    <Compile Include="Mash.cs" />
+    <Compile Include="MashProfile.cs" />
     <Compile Include="MashStep.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Recipe.cs" />

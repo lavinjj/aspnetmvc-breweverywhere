@@ -11,7 +11,7 @@ namespace BrewEverywhere.Models
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
-        public int Version { get; set; }
+        public byte[] Version { get; set; }
         public double GrainTemp { get; set; }
         public List<MashStep> MashSteps { get; set; }
         public string Notes { get; set; }
@@ -25,6 +25,7 @@ namespace BrewEverywhere.Models
 
     public class RecipeMashProfile : MashProfile
     {
+        public Recipe Recipe { get; set; }
         public Guid RecipeId { get; set; }
     }
 }

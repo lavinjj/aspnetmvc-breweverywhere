@@ -11,8 +11,8 @@ namespace BrewEverywhere.Data
     {
         public BrewerInventoryConfiguration()
         {
-            HasRequired(i => i.Brewer).WithRequiredPrincipal();
-
+            HasRequired(i => i.Brewer).WithOptional(b => b.Inventory);
+            Property(p => p.Version).IsRowVersion();
         }
     }
 }

@@ -7,11 +7,12 @@ using BrewEverywhere.Models;
 
 namespace BrewEverywhere.Data
 {
-    internal class BrewerConfiguration : EntityTypeConfiguration<Brewer>
+    internal class MashStepConfiguration : EntityTypeConfiguration<MashStep>
     {
-        public BrewerConfiguration()
+        public MashStepConfiguration()
         {
-            HasRequired(b => b.Account).WithRequiredPrincipal();
+            HasRequired(t => t.MashProfile).WithMany(a => a.MashSteps).HasForeignKey(t => t.MashProfileId);
+            Map<MashStep>(m => m.ToTable("MashSteps"));
             Property(p => p.Version).IsRowVersion();
         }
     }

@@ -7,11 +7,11 @@ using BrewEverywhere.Models;
 
 namespace BrewEverywhere.Data
 {
-    internal class BrewerConfiguration : EntityTypeConfiguration<Brewer>
+    internal class StyleConfiguration : EntityTypeConfiguration<Style>
     {
-        public BrewerConfiguration()
+        public StyleConfiguration()
         {
-            HasRequired(b => b.Account).WithRequiredPrincipal();
+            Map<Style>(m => m.ToTable("Styles"));
             Property(p => p.Version).IsRowVersion();
         }
     }

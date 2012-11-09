@@ -10,7 +10,7 @@ namespace BrewEverywhere.Models
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
-        public int Version { get; set; }
+        public byte[] Version { get; set; }
         public double BoilSize { get; set; }
         public double BatchSize { get; set; }
         public double TUNVolume { get; set; }
@@ -29,11 +29,13 @@ namespace BrewEverywhere.Models
 
     public class InventoryEquipment : Equipment
     {
-        public Guid BrewerId { get; set; }
+        public BrewerInventory BrewerInventory { get; set; }
+        public Guid BrewerInventoryId { get; set; }
     }
 
     public class RecipeEquipment : Equipment
     {
+        public Recipe Recipe { get; set; }
         public Guid RecipeId { get; set; }
     }
 }

@@ -9,7 +9,7 @@ namespace BrewEverywhere.Models
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
-        public int Version { get; set; }
+        public byte[] Version { get; set; }
         public string Category { get; set; }
         public string CategoryNumber { get; set; } // BJCP style guide int
         public string StyleLetter { get; set; } // BJCP style letter

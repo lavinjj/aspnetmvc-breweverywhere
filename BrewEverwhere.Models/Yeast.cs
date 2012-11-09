@@ -10,7 +10,7 @@ namespace BrewEverywhere.Models
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
-        public int Version { get; set; }
+        public byte[] Version { get; set; }
         public string Type { get; set; } // can be "Ale", "Lager", "Wheat", "Wine" or "Champagne"
         public string Form { get; set; } // can be "Liquid", "Dry", "Slant" or "Culture"
         public double Amount { get; set; } // in liters
@@ -30,11 +30,13 @@ namespace BrewEverywhere.Models
 
     public class InventoryYeast : Yeast
     {
-        public Guid BrewerId { get; set; }
+        public BrewerInventory BrewerInventory { get; set; }
+        public Guid BrewerInventoryId { get; set; }
     }
 
     public class RecipeYeast : Yeast
     {
+        public Recipe Recipe { get; set; }
         public Guid RecipeId { get; set; }
     }
 }

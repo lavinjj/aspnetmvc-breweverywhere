@@ -9,9 +9,10 @@ namespace BrewEverywhere.Models
     public class MashStep
     {
         public Guid Id { get; set; }
+        public MashProfile MashProfile { get; set; }
         public Guid MashProfileId { get; set; }
         public string Name { get; set; }
-        public int Version { get; set; }
+        public byte[] Version { get; set; }
         public string Type { get; set; } // can be "Infusion", "Temperature" or "Decoction"
         public double InfuseAmount { get; set; }
         public double Temperature { get; set; } // in C

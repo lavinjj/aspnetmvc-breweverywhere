@@ -10,7 +10,7 @@ namespace BrewEverywhere.Models
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
-        public int Version { get; set; }
+        public byte[] Version { get; set; }
         public double Alpha { get; set; } // percent
         public double Amount { get; set; } // weight in kg
         public string Use { get; set; } // can be "Boil", "Dry Hop", "Mash", "First Wort" or "Aroma"
@@ -30,11 +30,13 @@ namespace BrewEverywhere.Models
 
     public class InventoryHop : Hop
     {
-        public Guid BrewerId { get; set; }
+        public BrewerInventory BrewerInventory { get; set; }
+        public Guid BrewerInventoryId { get; set; }
     }
 
     public class RecipeHop : Hop
     {
+        public Recipe Recipe { get; set; }
         public Guid RecipeId { get; set; }
     }
 }

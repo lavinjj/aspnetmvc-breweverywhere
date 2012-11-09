@@ -10,7 +10,7 @@ namespace BrewEverywhere.Models
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
-        public int Version { get; set; }
+        public byte[] Version { get; set; }
         public string Type { get; set; } // can be "Spice", "Fining", "Water Agent", "Herb", "Flavor" or "Other"
         public string Use { get; set; } // can be "Boil", "Mash", "Primary", "Secondary" or "Bottling"
         public double Time { get; set; } // in minutes
@@ -22,11 +22,13 @@ namespace BrewEverywhere.Models
 
     public class InventoryAdjunct : Adjunct
     {
-        public Guid BrewerId { get; set; }
+        public BrewerInventory BrewerInventory { get; set; }
+        public Guid BrewerInventoryId { get; set; }
     }
 
     public class RecipeAdjunct : Adjunct
     {
+        public Recipe Recipe { get; set; }
         public Guid RecipeId { get; set; }
     }
 }

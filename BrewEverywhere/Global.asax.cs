@@ -6,6 +6,8 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using System.Data.Entity;
+using BrewEverywhere.Data;
 
 namespace BrewEverywhere
 {
@@ -16,6 +18,8 @@ namespace BrewEverywhere
     {
         protected void Application_Start()
         {
+            Database.SetInitializer<BrewEverywhereDBContext>(new BrewEverywhereInitializer());
+
             AreaRegistration.RegisterAllAreas();
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);

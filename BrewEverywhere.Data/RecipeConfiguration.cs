@@ -7,11 +7,12 @@ using BrewEverywhere.Models;
 
 namespace BrewEverywhere.Data
 {
-    internal class BrewerConfiguration : EntityTypeConfiguration<Brewer>
+    internal class RecipeConfiguration : EntityTypeConfiguration<Recipe>
     {
-        public BrewerConfiguration()
+        public RecipeConfiguration()
         {
-            HasRequired(b => b.Account).WithRequiredPrincipal();
+            HasRequired(t => t.Brewer).WithMany(a => a.Recipies).HasForeignKey(t => t.BrewerId);
+            Map<Recipe>(m => m.ToTable("Recipes"));
             Property(p => p.Version).IsRowVersion();
         }
     }
