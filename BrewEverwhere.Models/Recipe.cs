@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Collections.ObjectModel;
 
-namespace BrewEverywhere.Models.Entities
+namespace BrewEverywhere.Models
 {
     public class Recipe
     {

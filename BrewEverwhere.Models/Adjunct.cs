@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Xml;
 
-namespace BrewEverywhere.Models.Entities
+namespace BrewEverywhere.Models
 {
     public class Adjunct
     {

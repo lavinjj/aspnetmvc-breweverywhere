@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrewEverywhere", "BrewEvery
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrewEverwhere.Models", "BrewEverwhere.Models\BrewEverwhere.Models.csproj", "{2BAE17AD-1EB5-42A8-8684-6081DBD91208}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrewEverywhere.Data", "BrewEverywhere.Data\BrewEverywhere.Data.csproj", "{4A5933CE-8FA7-43DB-89C1-B2A2DE6408CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{2BAE17AD-1EB5-42A8-8684-6081DBD91208}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2BAE17AD-1EB5-42A8-8684-6081DBD91208}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2BAE17AD-1EB5-42A8-8684-6081DBD91208}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A5933CE-8FA7-43DB-89C1-B2A2DE6408CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A5933CE-8FA7-43DB-89C1-B2A2DE6408CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A5933CE-8FA7-43DB-89C1-B2A2DE6408CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A5933CE-8FA7-43DB-89C1-B2A2DE6408CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
