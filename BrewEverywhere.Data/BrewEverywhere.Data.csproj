@@ -43,7 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BrewerConfiguration.cs" />
+    <Compile Include="BrewerInventoryConfiguration.cs" />
     <Compile Include="BrewEverywhereDBContext.cs" />
+    <Compile Include="BrewEverywhereInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -51,9 +54,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BrewEverwhere.Models\BrewEverwhere.Models.csproj">
+    <ProjectReference Include="..\BrewEverwhere.Models\BrewEverywhere.Models.csproj">
       <Project>{2BAE17AD-1EB5-42A8-8684-6081DBD91208}</Project>
-      <Name>BrewEverwhere.Models</Name>
+      <Name>BrewEverywhere.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

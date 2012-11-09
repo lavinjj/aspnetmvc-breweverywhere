@@ -9,7 +9,7 @@ namespace BrewEverywhere.Models
     public class MashStep
     {
         public Guid Id { get; set; }
-        public Guid BrewerId { get; set; }
+        public Guid MashProfileId { get; set; }
         public string Name { get; set; }
         public int Version { get; set; }
         public string Type { get; set; } // can be "Infusion", "Temperature" or "Decoction"

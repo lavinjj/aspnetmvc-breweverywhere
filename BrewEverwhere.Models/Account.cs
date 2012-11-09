@@ -8,6 +8,7 @@ namespace BrewEverywhere.Models
     public class Account
     {
         public Guid Id { get; set; }
+        public string userName { get; set; }
         public string Password { get; set; }
     }
 }

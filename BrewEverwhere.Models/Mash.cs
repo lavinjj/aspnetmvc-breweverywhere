@@ -3,17 +3,17 @@ using System.Linq;
 using System.Text;
 using System.Xml;
 using System.Collections.ObjectModel;
+using System.Collections.Generic;
 
 namespace BrewEverywhere.Models
 {
-    public class Mash
+    public class MashProfile
     {
         public Guid Id { get; set; }
-        public Guid BrewerId { get; set; }
         public string Name { get; set; }
         public int Version { get; set; }
         public double GrainTemp { get; set; }
-        public Collection<MashStep> MashSteps { get; set; }
+        public List<MashStep> MashSteps { get; set; }
         public string Notes { get; set; }
         public double TUNTemp { get; set; }
         public double SpargeTemp { get; set; }
@@ -21,5 +21,10 @@ namespace BrewEverywhere.Models
         public double TUNWeight { get; set; }
         public double TUNSpecificHeat { get; set; }
         public bool EquipAdjust { get; set; }
+    }
+
+    public class RecipeMashProfile : MashProfile
+    {
+        public Guid RecipeId { get; set; }
     }
 }

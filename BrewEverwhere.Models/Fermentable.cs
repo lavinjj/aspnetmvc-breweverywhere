@@ -9,7 +9,6 @@ namespace BrewEverywhere.Models
     public class Fermentable
     {
         public Guid Id { get; set; }
-        public Guid BrewerId { get; set; }
         public string Name { get; set; }
         public int Version { get; set; }
         public string Type { get; set; } // can be "Grain", "Sugar", "Extract", "Dry Extract" or "Adjunct"
@@ -27,5 +26,15 @@ namespace BrewEverywhere.Models
         public double MaxInBatch { get; set; } // percent
         public bool RecommendMash { get; set; }
         public double IBUGalPerPound { get; set; }
+    }
+
+    public class InventoryFermentable : Fermentable
+    {
+        public Guid BrewerId { get; set; }
+    }
+
+    public class RecipeFermentable : Fermentable
+    {
+        public Guid RecipeId { get; set; }
     }
 }

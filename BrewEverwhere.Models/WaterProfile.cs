@@ -6,10 +6,9 @@ using System.Xml;
 
 namespace BrewEverywhere.Models
 {
-    public class Water
+    public class WaterProfile
     {
         public Guid Id { get; set; }
-        public Guid BrewerId { get; set; }
         public string Name { get; set; }
         public int Version { get; set; }
         public double Amount { get; set; } // in liter
@@ -21,5 +20,15 @@ namespace BrewEverywhere.Models
         public double Magnesium { get; set; }
         public double PH { get; set; }
         public string Notes { get; set; }
+    }
+
+    public class InventoryWaterProfile : WaterProfile
+    {
+        public Guid BrewerId { get; set; }
+    }
+
+    public class RecipeWaterProfile : WaterProfile
+    {
+        public Guid RecipeId { get; set; }
     }
 }

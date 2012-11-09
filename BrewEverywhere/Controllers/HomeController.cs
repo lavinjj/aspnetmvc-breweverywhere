@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BrewEverywhere.Data;
 
 namespace BrewEverywhere.Controllers
 {
@@ -10,6 +11,10 @@ namespace BrewEverywhere.Controllers
     {
         public ActionResult Index()
         {
+            var dbContext = new BrewEverywhereDBContext();
+
+            var brewers = dbContext.Brewers;
+
             return View();
         }
     }

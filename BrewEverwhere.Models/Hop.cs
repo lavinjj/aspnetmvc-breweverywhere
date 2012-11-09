@@ -9,7 +9,6 @@ namespace BrewEverywhere.Models
     public class Hop
     {
         public Guid Id { get; set; }
-        public Guid BrewerId { get; set; }
         public string Name { get; set; }
         public int Version { get; set; }
         public double Alpha { get; set; } // percent
@@ -27,5 +26,15 @@ namespace BrewEverywhere.Models
         public double Caryophyllene { get; set; } // percent
         public double Cohumulone { get; set; } // percent
         public double Myrcene { get; set; } // percent
+    }
+
+    public class InventoryHop : Hop
+    {
+        public Guid BrewerId { get; set; }
+    }
+
+    public class RecipeHop : Hop
+    {
+        public Guid RecipeId { get; set; }
     }
 }

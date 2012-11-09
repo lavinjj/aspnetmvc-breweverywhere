@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrewEverywhere", "BrewEverywhere\BrewEverywhere.csproj", "{82B80DC2-52D5-4152-8340-4E13195E69D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrewEverwhere.Models", "BrewEverwhere.Models\BrewEverwhere.Models.csproj", "{2BAE17AD-1EB5-42A8-8684-6081DBD91208}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrewEverywhere.Models", "BrewEverwhere.Models\BrewEverywhere.Models.csproj", "{2BAE17AD-1EB5-42A8-8684-6081DBD91208}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrewEverywhere.Data", "BrewEverywhere.Data\BrewEverywhere.Data.csproj", "{4A5933CE-8FA7-43DB-89C1-B2A2DE6408CE}"
 EndProject

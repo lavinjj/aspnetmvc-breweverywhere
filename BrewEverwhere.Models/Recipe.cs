@@ -4,30 +4,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BrewEverywhere.Models
 {
     public class Recipe
     {
         public Guid Id { get; set; }
+        [ForeignKey("BrewerId")]
+        public Brewer Brewer { get; set; }
         public Guid BrewerId { get; set; }
         public string Name { get; set; }
         public int Version { get; set; }
         public string Type { get; set; } // can only be "Extract", "Partial Mash" or "All Grain"
-        public Collection<Style> Styles { get; set; }
-        public Collection<Equipment> Equipment { get; set; }
+        public List<Style> Styles { get; set; }
+        public List<RecipeEquipment> Equipment { get; set; }
         public string BrewerName { get; set; }
         public string AssistantBrewerName { get; set; }
         public double BatchSize { get; set; } // in liters
         public double BoilSize { get; set; } // in liters
         public double BoilTime { get; set; } // in minutes
         public double BrewHouseEfficiency { get; set; }
-        public Collection<Hop> Hops { get; set; }
-        public Collection<Fermentable> Fermentables { get; set; }
-        public Collection<Adjunct> Adjuncts { get; set; }
-        public Collection<Yeast> Yeast { get; set; }
-        public Collection<Water> Water { get; set; }
-        public Collection<Mash> Mash { get; set; }
+        public List<RecipeHop> Hops { get; set; }
+        public List<RecipeFermentable> Fermentables { get; set; }
+        public List<RecipeAdjunct> Adjuncts { get; set; }
+        public List<RecipeYeast> Yeast { get; set; }
+        public List<RecipeWaterProfile> Water { get; set; }
+        public List<RecipeMashProfile> MashProfile { get; set; }
         public string Notes { get; set; }
         public string TasteNotes { get; set; }
         public double TasteRating { get; set; } // 0-50.0

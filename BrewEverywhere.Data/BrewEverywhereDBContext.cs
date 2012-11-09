@@ -18,11 +18,16 @@ namespace BrewEverywhere.Data
         public DbSet<Equipment> EquipmentProfiles { get; set; }
         public DbSet<Fermentable> Fermentables { get; set; }
         public DbSet<Hop> Hops { get; set; }
-        public DbSet<Mash> MashProfiles { get; set; }
+        public DbSet<MashProfile> MashProfiles { get; set; }
         public DbSet<MashStep> MashSteps { get; set; }
         public DbSet<Recipe> Recipes { get; set; }
         public DbSet<Style> Styles { get; set; }
-        public DbSet<Water> WaterProfiles { get; set; }
+        public DbSet<WaterProfile> WaterProfiles { get; set; }
         public DbSet<Yeast> Yeasts { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

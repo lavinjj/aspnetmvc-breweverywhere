@@ -427,9 +427,13 @@
     <None Include="Scripts\jasmine\MIT.LICENSE" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BrewEverwhere.Models\BrewEverwhere.Models.csproj">
+    <ProjectReference Include="..\BrewEverwhere.Models\BrewEverywhere.Models.csproj">
       <Project>{2BAE17AD-1EB5-42A8-8684-6081DBD91208}</Project>
-      <Name>BrewEverwhere.Models</Name>
+      <Name>BrewEverywhere.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BrewEverywhere.Data\BrewEverywhere.Data.csproj">
+      <Project>{4A5933CE-8FA7-43DB-89C1-B2A2DE6408CE}</Project>
+      <Name>BrewEverywhere.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

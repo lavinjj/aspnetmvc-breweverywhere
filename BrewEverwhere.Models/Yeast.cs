@@ -9,7 +9,6 @@ namespace BrewEverywhere.Models
     public class Yeast
     {
         public Guid Id { get; set; }
-        public Guid BrewerId { get; set; }
         public string Name { get; set; }
         public int Version { get; set; }
         public string Type { get; set; } // can be "Ale", "Lager", "Wheat", "Wine" or "Champagne"
@@ -27,5 +26,15 @@ namespace BrewEverywhere.Models
         public int TimesCultured { get; set; }
         public int MaxReuse { get; set; }
         public bool AddToSecondary { get; set; }
+    }
+
+    public class InventoryYeast : Yeast
+    {
+        public Guid BrewerId { get; set; }
+    }
+
+    public class RecipeYeast : Yeast
+    {
+        public Guid RecipeId { get; set; }
     }
 }

@@ -9,7 +9,6 @@ namespace BrewEverywhere.Models
     public class Equipment
     {
         public Guid Id { get; set; }
-        public Guid BrewerId { get; set; }
         public string Name { get; set; }
         public int Version { get; set; }
         public double BoilSize { get; set; }
@@ -26,5 +25,15 @@ namespace BrewEverywhere.Models
         public double TopUpKettle { get; set; }
         public double HopUtilization { get; set; } // percent
         public string Notes { get; set; }
+    }
+
+    public class InventoryEquipment : Equipment
+    {
+        public Guid BrewerId { get; set; }
+    }
+
+    public class RecipeEquipment : Equipment
+    {
+        public Guid RecipeId { get; set; }
     }
 }
