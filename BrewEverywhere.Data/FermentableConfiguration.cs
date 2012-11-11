@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data.Entity.ModelConfiguration;
 using BrewEverywhere.Models;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BrewEverywhere.Data
 {
@@ -11,8 +12,14 @@ namespace BrewEverywhere.Data
     {
         public FermentableConfiguration()
         {
+            // table mapping
             Map<Fermentable>(m => m.ToTable("Fermentables"));
+
+            // column mapping
+            Property(p => p.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(p => p.Version).IsRowVersion();
+
+            // relationships
         }
     }
 
@@ -20,8 +27,13 @@ namespace BrewEverywhere.Data
     {
         public InventoryFermentableConfiguration()
         {
-            HasRequired(t => t.BrewerInventory).WithMany(a => a.Fermentables).HasForeignKey(t => t.BrewerInventoryId);
+            // table mapping
             Map<InventoryFermentable>(m => m.ToTable("InventoryFermentables"));
+
+            // column mapping
+
+            // relationships
+            HasRequired(t => t.BrewerInventory).WithMany(a => a.Fermentables).HasForeignKey(t => t.BrewerInventoryId);
         }
     }
 
@@ -29,8 +41,13 @@ namespace BrewEverywhere.Data
     {
         public RecipeFermentableConfiguration()
         {
-            HasRequired(t => t.Recipe).WithMany(a => a.Fermentables).HasForeignKey(t => t.RecipeId);
+            // table mapping
             Map<RecipeFermentable>(m => m.ToTable("RecipeFermentables"));
+
+            // column mapping
+
+            // relationships
+            HasRequired(t => t.Recipe).WithMany(a => a.Fermentables).HasForeignKey(t => t.RecipeId);
         }
     }
 }

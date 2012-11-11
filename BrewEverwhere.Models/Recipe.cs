@@ -11,15 +11,25 @@ namespace BrewEverywhere.Models
 {
     public class Recipe
     {
+        public Recipe()
+        {
+            Equipment = new List<RecipeEquipment>();
+            Hops = new List<RecipeHop>();
+            Fermentables = new List<RecipeFermentable>();
+            Adjuncts = new List<RecipeAdjunct>();
+            Yeast = new List<RecipeYeast>();
+        }
         public Guid Id { get; set; }
         public Brewer Brewer { get; set; }
         public Guid BrewerId { get; set; }
+        [Required]
         public string Name { get; set; }
         public byte[] Version { get; set; }
         public string Type { get; set; } // can only be "Extract", "Partial Mash" or "All Grain"
         public Style Style { get; set; }
         public Guid StyleId { get; set; }
         public List<RecipeEquipment> Equipment { get; set; }
+        [Required]
         public string BrewerName { get; set; }
         public string AssistantBrewerName { get; set; }
         public double BatchSize { get; set; } // in liters

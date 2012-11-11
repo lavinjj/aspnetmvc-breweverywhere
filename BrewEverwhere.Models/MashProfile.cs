@@ -4,12 +4,14 @@ using System.Text;
 using System.Xml;
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace BrewEverywhere.Models
 {
     public class MashProfile
     {
         public Guid Id { get; set; }
+        [Required]
         public string Name { get; set; }
         public byte[] Version { get; set; }
         public double GrainTemp { get; set; }

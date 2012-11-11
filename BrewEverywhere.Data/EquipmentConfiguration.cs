@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data.Entity.ModelConfiguration;
 using BrewEverywhere.Models;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BrewEverywhere.Data
 {
@@ -11,8 +12,14 @@ namespace BrewEverywhere.Data
     {
         public EquipmentConfiguration()
         {
+            // table mapping
             Map<Equipment>(m => m.ToTable("Equipment"));
+
+            // column mapping
+            Property(p => p.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(p => p.Version).IsRowVersion();
+
+            // relationships
         }
     }
 
@@ -20,8 +27,13 @@ namespace BrewEverywhere.Data
     {
         public InventoryEquipmentConfiguration()
         {
-            HasRequired(t => t.BrewerInventory).WithMany(a => a.Equipment).HasForeignKey(t => t.BrewerInventoryId);
+            // table mapping
             Map<InventoryEquipment>(m => m.ToTable("InventoryEquipment"));
+
+            // column mapping
+
+            // relationships
+            HasRequired(t => t.BrewerInventory).WithMany(a => a.Equipment).HasForeignKey(t => t.BrewerInventoryId);
         }
     }
 
@@ -29,8 +41,13 @@ namespace BrewEverywhere.Data
     {
         public RecipeEquipmentConfiguration()
         {
-            HasRequired(t => t.Recipe).WithMany(a => a.Equipment).HasForeignKey(t => t.RecipeId);
+            // table mapping
             Map<RecipeEquipment>(m => m.ToTable("RecipeEquipment"));
+
+            // column mapping
+
+            // relationships
+            HasRequired(t => t.Recipe).WithMany(a => a.Equipment).HasForeignKey(t => t.RecipeId);
         }
     }
 }

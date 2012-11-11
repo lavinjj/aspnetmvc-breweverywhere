@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml;
+using System.ComponentModel.DataAnnotations;
 
 namespace BrewEverywhere.Models
 {
     public class Adjunct
     {
         public Guid Id { get; set; }
+        [Required]
         public string Name { get; set; }
         public byte[] Version { get; set; }
+        [Required]
         public string Type { get; set; } // can be "Spice", "Fining", "Water Agent", "Herb", "Flavor" or "Other"
         public string Use { get; set; } // can be "Boil", "Mash", "Primary", "Secondary" or "Bottling"
         public double Time { get; set; } // in minutes

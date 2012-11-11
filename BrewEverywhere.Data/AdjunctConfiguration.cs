@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data.Entity.ModelConfiguration;
+using System.ComponentModel.DataAnnotations.Schema;
 using BrewEverywhere.Models;
 
 namespace BrewEverywhere.Data
@@ -11,8 +12,14 @@ namespace BrewEverywhere.Data
     {
         public AdjunctConfiguration()
         {
+            // table mapping
             Map<Adjunct>(m => m.ToTable("Adjuncts"));
+            
+            // column mapping
+            Property(p => p.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(p => p.Version).IsRowVersion();
+            
+            // relationships
         }
     }
 
@@ -20,8 +27,13 @@ namespace BrewEverywhere.Data
     {
         public InventoryAdjunctConfiguration()
         {
-            HasRequired(t => t.BrewerInventory).WithMany(a => a.Adjuncts).HasForeignKey(t => t.BrewerInventoryId);
+            // table mapping
             Map<InventoryAdjunct>(m => m.ToTable("InventoryAdjunct"));
+
+            // column mapping 
+
+            // relationships
+            HasRequired(t => t.BrewerInventory).WithMany(a => a.Adjuncts).HasForeignKey(t => t.BrewerInventoryId);
         }
     }
 
@@ -29,8 +41,13 @@ namespace BrewEverywhere.Data
     {
         public RecipeAdjunctConfiguration()
         {
-            HasRequired(t => t.Recipe).WithMany(a => a.Adjuncts).HasForeignKey(t => t.RecipeId);
+            // table mapping
             Map<RecipeAdjunct>(m => m.ToTable("RecipeAdjunct"));
+
+            // column mapping
+
+            // relationships
+            HasRequired(t => t.Recipe).WithMany(a => a.Adjuncts).HasForeignKey(t => t.RecipeId);
         }
     }
 }

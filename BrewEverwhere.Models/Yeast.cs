@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml;
+using System.ComponentModel.DataAnnotations;
 
 namespace BrewEverywhere.Models
 {
     public class Yeast
     {
         public Guid Id { get; set; }
+        [Required]
         public string Name { get; set; }
         public byte[] Version { get; set; }
         public string Type { get; set; } // can be "Ale", "Lager", "Wheat", "Wine" or "Champagne"

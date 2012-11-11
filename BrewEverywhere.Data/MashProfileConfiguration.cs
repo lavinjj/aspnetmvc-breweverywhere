@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data.Entity.ModelConfiguration;
 using BrewEverywhere.Models;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BrewEverywhere.Data
 {
@@ -11,8 +12,14 @@ namespace BrewEverywhere.Data
     {
         public MashProfileConfiguration()
         {
+            // table mapping
             Map<MashProfile>(m => m.ToTable("MashProfiles"));
+
+            // column mapping
+            Property(p => p.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(p => p.Version).IsRowVersion();
+
+            // relationships
         }
     }
 
@@ -20,8 +27,13 @@ namespace BrewEverywhere.Data
     {
         public RecipeMashProfileConfiguration()
         {
-            HasRequired(p => p.Recipe).WithRequiredPrincipal();
+            // table mapping
             Map<RecipeMashProfile>(m => m.ToTable("RecipeMashProfiles"));
+
+            // column mapping
+
+            // relationships
+            HasRequired(p => p.Recipe).WithRequiredPrincipal();
         }
     }
 }

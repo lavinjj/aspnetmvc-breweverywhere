@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml;
+using System.ComponentModel.DataAnnotations;
 
 namespace BrewEverywhere.Models
 {
     public class WaterProfile
     {
         public Guid Id { get; set; }
+        [Required]
         public string Name { get; set; }
         public byte[] Version { get; set; }
         public double Amount { get; set; } // in liter

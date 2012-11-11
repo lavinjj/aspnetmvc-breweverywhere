@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace BrewEverywhere.Models
 {
@@ -15,7 +16,9 @@ namespace BrewEverywhere.Models
         public Guid Id { get; set; }
         public Account Account { get; set; }
         public Guid AccountId { get; set; }
+        [Required]
         public String Name { get; set; }
+        [Required]
         public string Email { get; set; }
         public List<Recipe> Recipies { get; set; }
         public BrewerInventory Inventory { get; set; }

@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountConfiguration.cs" />
     <Compile Include="AdjunctConfiguration.cs" />
     <Compile Include="BrewerConfiguration.cs" />
     <Compile Include="BrewerInventoryConfiguration.cs" />

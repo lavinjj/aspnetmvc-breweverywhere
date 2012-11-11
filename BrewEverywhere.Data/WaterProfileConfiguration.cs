@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data.Entity.ModelConfiguration;
 using BrewEverywhere.Models;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BrewEverywhere.Data
 {
@@ -11,8 +12,14 @@ namespace BrewEverywhere.Data
     {
         public WaterProfileConfiguration()
         {
+            // table mapping
             Map<WaterProfile>(m => m.ToTable("WaterProfiles"));
+
+            // column mapping
+            Property(p => p.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(p => p.Version).IsRowVersion();
+
+            // relationships
         }
     }
 
@@ -20,8 +27,13 @@ namespace BrewEverywhere.Data
     {
         public InventoryWaterProfileConfiguration()
         {
-            HasRequired(t => t.BrewerInventory).WithMany(a => a.WaterProfiles).HasForeignKey(t => t.BrewerInventoryId);
+            // table mapping
             Map<InventoryWaterProfile>(m => m.ToTable("InventoryWaterProfile"));
+
+            // column mapping
+
+            // relationships
+            HasRequired(t => t.BrewerInventory).WithMany(a => a.WaterProfiles).HasForeignKey(t => t.BrewerInventoryId);
         }
     }
 
@@ -29,8 +41,13 @@ namespace BrewEverywhere.Data
     {
         public RecipeWaterProfileConfiguration()
         {
-            HasRequired(t => t.Recipe).WithOptional(a => a.WaterProfile);
+            // table mapping
             Map<RecipeWaterProfile>(m => m.ToTable("RecipeWaterProfile"));
+
+            // column mapping
+
+            // relationships
+            HasRequired(t => t.Recipe).WithOptional(a => a.WaterProfile);
         }
     }
 }
