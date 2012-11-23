@@ -20,12 +20,19 @@ namespace BrewEverywhere
         {
             Database.SetInitializer<BrewEverywhereDBContext>(new BrewEverywhereInitializer());
 
+            // log4net configuration
+            log4net.Config.XmlConfigurator.Configure(new System.IO.FileInfo(HttpContext.Current.Server.MapPath("~/Web.config")));
+            // configure IOC Container
+            IOCConfig.RegisterIOCContainers();
+            // register MVC Areas
             AreaRegistration.RegisterAllAreas();
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            // remove XML Formatter for API Data Response
+            GlobalConfiguration.Configuration.Formatters.XmlFormatter.SupportedMediaTypes.Clear();
         }
     }
 }

@@ -43,22 +43,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountConfiguration.cs" />
-    <Compile Include="AdjunctConfiguration.cs" />
-    <Compile Include="BrewerConfiguration.cs" />
-    <Compile Include="BrewerInventoryConfiguration.cs" />
-    <Compile Include="BrewEverywhereDBContext.cs" />
-    <Compile Include="BrewEverywhereInitializer.cs" />
-    <Compile Include="EquipmentConfiguration.cs" />
-    <Compile Include="FermentableConfiguration.cs" />
-    <Compile Include="HopConfiguration.cs" />
-    <Compile Include="MashProfileConfiguration.cs" />
-    <Compile Include="MashStepConfiguration.cs" />
+    <Compile Include="BrewEverywhereRepository.cs" />
+    <Compile Include="Configuration\AccountConfiguration.cs" />
+    <Compile Include="Configuration\AdjunctConfiguration.cs" />
+    <Compile Include="Configuration\BrewerConfiguration.cs" />
+    <Compile Include="Configuration\BrewerInventoryConfiguration.cs" />
+    <Compile Include="DBContext\BrewEverywhereDBContext.cs" />
+    <Compile Include="Initializer\BrewEverywhereInitializer.cs" />
+    <Compile Include="Configuration\EquipmentConfiguration.cs" />
+    <Compile Include="Configuration\FermentableConfiguration.cs" />
+    <Compile Include="Configuration\HopConfiguration.cs" />
+    <Compile Include="Configuration\MashProfileConfiguration.cs" />
+    <Compile Include="Configuration\MashStepConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RecipeConfiguration.cs" />
-    <Compile Include="StyleConfiguration.cs" />
-    <Compile Include="WaterProfileConfiguration.cs" />
-    <Compile Include="YeastConfiguration.cs" />
+    <Compile Include="Configuration\RecipeConfiguration.cs" />
+    <Compile Include="Configuration\StyleConfiguration.cs" />
+    <Compile Include="Configuration\WaterProfileConfiguration.cs" />
+    <Compile Include="Configuration\YeastConfiguration.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -68,6 +69,10 @@
     <ProjectReference Include="..\BrewEverwhere.Models\BrewEverywhere.Models.csproj">
       <Project>{2BAE17AD-1EB5-42A8-8684-6081DBD91208}</Project>
       <Name>BrewEverywhere.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BrewEverywhere.Interfaces\BrewEverywhere.Interfaces.csproj">
+      <Project>{ED85EC26-F25F-4231-973F-5306D333EB49}</Project>
+      <Name>BrewEverywhere.Interfaces</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

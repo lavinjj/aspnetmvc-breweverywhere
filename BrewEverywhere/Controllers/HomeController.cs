@@ -11,10 +11,6 @@ namespace BrewEverywhere.Controllers
     {
         public ActionResult Index()
         {
-            var dbContext = new BrewEverywhereDBContext();
-
-            var brewers = dbContext.Brewers;
-
             return View();
         }
     }
